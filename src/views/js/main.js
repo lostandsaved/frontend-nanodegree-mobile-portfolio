@@ -545,7 +545,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var s = 256;
   //document.querySelector("#movingPizzas1").appendChild(elem);//12/1/moving out of loop
   var movingPizzas = document.getElementById('movingPizzas1');//12/1/creating variable and appending in loop. Also using getElementByID
-  for (var i = 0; i < 40; i++) {  //12/1/decreasing to 40
+  for (var i = 0; i < 35; i++) {  //12/1/decreasing to 35
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
