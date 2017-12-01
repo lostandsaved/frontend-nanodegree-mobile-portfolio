@@ -2,9 +2,9 @@
 
 ## Usage
 
-Vist: [Index page](https://lostandsaved.github.io/frontend-nanodegree-mobile-portfolio/dist/index.html)
+Visit: [Index page](https://lostandsaved.github.io/frontend-nanodegree-mobile-portfolio/dist/index.html)
 
-Visit [Pizza page](https://lostandsaved.github.io/frontend-nanodegree-mobile-portfolio/dist/views/pizza.html)
+Visit: [Pizza page](https://lostandsaved.github.io/frontend-nanodegree-mobile-portfolio/dist/views/pizza.html)
 
 ## Summary of My Optimizations
 
