@@ -2,8 +2,6 @@
 
 ## Usage
 
-
-
 ## Summary of My Optimizations
 
 ### Images
@@ -12,11 +10,11 @@ I used GIMP to resize the images and Google Analytics or https://tinypng.com/ fo
 
 ### index.html
 
-* Added the style from  /style.css directly to the page
-* Moved the Analytics script to the bottom of page
+* Added the style from  /style.css directly to the page.
+* Moved the Analytics script to the bottom of page.
 * Added media="print" to print.css.
-* Used a compressed version of img/profilepic.jpg
-* Used/referenced to a smaller/compressed version of pizzeria.jpg (pizzeria-small.jpg)
+* Used a compressed version of img/profilepic.jpg.
+* Used/referenced to a smaller/compressed version of pizzeria.jpg (pizzeria-small.jpg).
 
 ### views/pizza.html
 
@@ -26,8 +24,8 @@ I used GIMP to resize the images and Google Analytics or https://tinypng.com/ fo
 
 ### views/js/main
 
-* Used the method learned in class to rewrite the "changePizzaSizes" function. This removes the querySelectors from the loop and only resizes the pizzas based on the size chosen by the slider
-* Updated the "updatePositions" function to use "getElementsByClassName" instead of "querySelector", this offered a slight improvement
+* Used the method learned in class to rewrite the "changePizzaSizes" function. This removes the querySelectors from the loop and only resizes the pizzas based on the size chosen by the slider.
+* Updated the "updatePositions" function to use "getElementsByClassName" instead of "querySelector", this offered a slight improvement.
 * Created a variable, "pageTop", and I am calculating this outside of the loop since it only needs to be calculated once, and then I am using it in the "phase" variable creation.
 
 ## Description of project requirements
