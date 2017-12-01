@@ -511,21 +511,14 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
 // Moves the sliding background pizzas based on scroll position
-var items = document.getElementsByClassName('mover'); //using classname vs querySelector and moving to global
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
   var pageTop = document.documentElement.scrollTop || document.body.scrollTop //calculating this out of the loop since it won't change
-  var arrPhases = []; //create an array and push the locations to it. These were previously calculating each time in the loop.
-  
-  for (var i = 0; i < 5; i++) {
-    arrPhases.push(Math.sin(pageTop + i));
-  }
-  
+  var items = document.getElementsByClassName('mover'); //using classname vs querySelector
   for (var i = 0; i < items.length; i++) {
-    //var phase = Math.sin((pageTop / 1250) + (i % 5));
-    //items[i].style.left = items[i].basicLeft + 100 * phases[i % 5] + 'px';
-    items[i].style.left = items[i].basicLeft + 100 * arrPhases + 'px';
+    var phase = Math.sin((pageTop / 1250) + (i % 5));
+    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -540,13 +533,12 @@ function updatePositions() {
 
 // runs updatePositions on scroll
 window.addEventListener('scroll', updatePositions);
+
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  //document.querySelector("#movingPizzas1").appendChild(elem);//12/1/moving out of loop
-  var movingPizzas = document.getElementById('movingPizzas1');//12/1/creating variable and appending in loop. Also using getElementByID
-  for (var i = 0; i < 45; i++) {  //12/1/decreasing to 35
+  for (var i = 0; i < 200; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
@@ -554,7 +546,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    movingPizzas.appendChild(elem);
+    document.querySelector("#movingPizzas1").appendChild(elem);
   }
   updatePositions();
 });
