@@ -26,11 +26,18 @@ I used GIMP to resize the images and Google Analytics or https://tinypng.com/ fo
 * Moved the reference to css/bootstrap-grid.css to the bottom of the page.
 * Used a smaller/compressed version of pizza.png.
 
-### views/js/main
+### views/js/main.js
 
 * Used the method learned in class to rewrite the "changePizzaSizes" function. This removes the querySelectors from the loop and only resizes the pizzas based on the size chosen by the slider.
 * Updated the "updatePositions" function to use "getElementsByClassName" instead of "querySelector", this offered a slight improvement.
 * Created a variable, "pageTop", and I am calculating this outside of the loop since it only needs to be calculated once, and then I am using it in the "phase" variable creation.
+* I am using transform / translateX to move the pizzas.
+* Replaced instances of querySelector with getElementByID.
+* Created a movingPizzas variable outside of the eventlister, and I am now only appending to it in the loop.
+
+### views/css/style.css
+
+* Added backface-visibility: hidden; and transform: translateZ(0); to the mover class.
 
 ## Description of project requirements
 
