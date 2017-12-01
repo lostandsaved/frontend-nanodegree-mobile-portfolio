@@ -401,13 +401,13 @@ var pizzaElementGenerator = function(i) {
 function changeSliderLabel(size) { //denested function
   switch(size) {
     case "1":
-      document.querySelector("#pizzaSize").innerHTML = "Small";
+      document.getElementById("#pizzaSize").innerHTML = "Small";
       return;
     case "2":
-      document.querySelector("#pizzaSize").innerHTML = "Medium";
+      document.getElementById("#pizzaSize").innerHTML = "Medium";
       return;
     case "3":
-      document.querySelector("#pizzaSize").innerHTML = "Large";
+      document.getElementById("#pizzaSize").innerHTML = "Large";
       return;
     default:
       console.log("bug in changeSliderLabel");
@@ -461,7 +461,7 @@ var resizePizzas = function(size) {
    // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
   function determineDx (elem, size) {
     var oldWidth = elem.offsetWidth;
-    var windowWidth = document.querySelector("#randomPizzas").offsetWidth;
+    var windowWidth = document.getElementById("#randomPizzas").offsetWidth;
     var oldSize = oldWidth / windowWidth;
     var newSize = sizeSwitcher(size);
     var dx = (newSize - oldSize) * windowWidth;
