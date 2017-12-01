@@ -539,7 +539,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var s = 256;
   //document.querySelector("#movingPizzas1").appendChild(elem);//12/1/moving out of loop
   var movingPizzas = document.getElementById('movingPizzas1');//12/1/using getElementByID
-  for (var i = 0; i < 50; i++) {  //12/1/decreasing pizzas to 50
+  for (var i = 0; i < 40; i++) {  //12/1/decreasing pizzas to 40
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
