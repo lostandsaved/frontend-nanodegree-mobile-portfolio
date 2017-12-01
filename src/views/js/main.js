@@ -533,11 +533,11 @@ function updatePositions() {
 
 // runs updatePositions on scroll
 window.addEventListener('scroll', updatePositions);
-document.querySelector("#movingPizzas1").appendChild(elem);//12/1/moving out of loop
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
+  document.querySelector("#movingPizzas1").appendChild(elem);//12/1/moving out of loop
   for (var i = 0; i < 50; i++) {  //12/1/decreasing pizzas to 50
     var elem = document.createElement('img');
     elem.className = 'mover';
