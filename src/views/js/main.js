@@ -427,6 +427,12 @@ function changeSliderLabel(size) { //denested function
         console.log("bug in sizeSwitcher");
     }
   }
+
+// resizePizzas(size) is called when the slider in the "Our Pizzas" section of the website moves.
+var resizePizzas = function(size) {
+  window.performance.mark("mark_start_resize");   // User Timing API function
+
+  // Changes the value for the size of the pizza above the slider
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) { //denested function
       switch (size) {
@@ -448,14 +454,6 @@ function changeSliderLabel(size) { //denested function
       for (var i=0; i < randomPizzas.length; i++) {
       randomPizzas[i].style.width = newwidth + "%";
     }
-
-
-// resizePizzas(size) is called when the slider in the "Our Pizzas" section of the website moves.
-var resizePizzas = function(size) {
-  window.performance.mark("mark_start_resize");   // User Timing API function
-
-  // Changes the value for the size of the pizza above the slider
-
   changeSliderLabel(size);
 
    // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
