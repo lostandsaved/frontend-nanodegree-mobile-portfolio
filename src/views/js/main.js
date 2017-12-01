@@ -518,7 +518,7 @@ function updatePositions() {
   var pageTop = document.documentElement.scrollTop || document.body.scrollTop //calculating this out of the loop since it won't change
   var arrPhases = []; //create an array and push the locations to it. These were previously calculating each time in the loop.
   for (var i = 0; i < 5; i++) {
-    arrPhases.push(Math.sin(topPosition + i));
+    arrPhases.push(Math.sin(pageTop + i));
   }
   
   for (var i = 0; i < items.length; i++) {
