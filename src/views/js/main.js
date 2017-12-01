@@ -516,9 +516,15 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
   var pageTop = document.documentElement.scrollTop || document.body.scrollTop //calculating this out of the loop since it won't change
+  var arrPhases = []; //create an array and push the locations to it. These were previously calculating each time in the loop.
+  for (var i = 0; i < 5; i++) {
+    arrPhases.push(Math.sin(topPosition + i));
+  }
+  
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin((pageTop / 1250) + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+    //items[i].style.left = items[i].basicLeft + 100 * phases[i % 5] + 'px';
+    items[i].style.left = items[i].basicLeft + 100 * arrPhases + 'px';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -538,8 +544,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
   //document.querySelector("#movingPizzas1").appendChild(elem);//12/1/moving out of loop
-  var movingPizzas = document.getElementById('movingPizzas1');//12/1/using getElementByID
-  for (var i = 0; i < 40; i++) {  //12/1/decreasing pizzas to 40
+  var movingPizzas = document.getElementById('movingPizzas1');//12/1/creating variable and appending in loop. Also using getElementByID
+  for (var i = 0; i < 40; i++) {  //12/1/decreasing to 40
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
